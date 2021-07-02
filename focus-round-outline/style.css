@@ -21,6 +21,16 @@ body {
     position: relative;
     border: 4px solid #e2e2e2;
     border-radius: 4px;
+    transition: all 1s, background-color .3s;
+}
+
+.box:hover {
+    background-color: rgb(206, 66, 136);
+}
+
+.box:active {
+    transition: all 1s, background-color .1s;
+    background-color: rgb(136, 45, 91);
 }
 
 .box:focus::after {
