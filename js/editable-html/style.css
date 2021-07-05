@@ -1,0 +1,64 @@
+header {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+[class^="outline-btn"] {
+    position: relative;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: var(--color-neutral-lightest);
+    border: solid 2px var(--color-neutral-lightest);
+
+    /* Outline focus border */
+    --outline-focus-border-size: 2px;
+}
+
+.outline-btn-dark {
+    color: var(--color-neutral-darkest);
+    border: solid 2px var(--color-neutral-darkest);
+}
+
+.outline-btn:hover {
+    background-color: var(--color-neutral-lightest);
+    color: var(--color-neutral-darkest);
+}
+
+.outline-btn:active {
+    background-color: var(--color-neutral-light);
+    color: var(--color-neutral-darkest);
+}
+
+.outline-btn-dark:hover {
+    background-color: var(--color-neutral-darkest);
+    color: var(--color-neutral-lightest);
+}
+
+.outline-btn-dark:active {
+    background-color: var(--color-neutral-dark);
+    color: var(--color-neutral-lightest);
+}
+
+.container {
+    width: calc(100vw - calc(var(--side-menu-width) * 1vw));
+    max-width: 1336px;
+    padding: 0 32px;
+    transition: all 0.3s;
+    margin: var(--container-margin);
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -24px;
+    width: calc(var(--side-menu-width) * 1vw + 24px);
+    height: 100vh;
+    padding: 8px 12px;
+    transition: all 0.3s;
+    background-color: var(--color-neutral-lightest);
+}

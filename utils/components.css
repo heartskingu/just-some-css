@@ -1,0 +1,35 @@
+:root {
+    /* Outline focus border size */
+    --outline-focus-border-size: 4px;
+
+    /* Outline focus border offset */
+    --outline-focus-border-offset: 2;
+
+    /* Outline focus border color */
+    --outline-focus-border-color: #f0f0f0;
+
+    /* Outline focus border radius */
+    --outline-focus-border-radius: 4px;
+
+    /* Side menu width */
+    --side-menu-width: 0;
+    --container-margin: 0 auto;
+}
+
+.outline-focus:focus::after {
+    /* Calc vars */
+    --final-offset: calc(var(--outline-focus-border-offset) + 1);
+    --negative-final-offset: calc(var(--final-offset) * -1);
+    --element-extra-size: calc(var(--outline-focus-border-size) * calc(var(--final-offset) * 2));
+
+    content: '';
+    position: absolute;
+    top: calc(var(--outline-focus-border-size) * var(--negative-final-offset));
+    left: calc(var(--outline-focus-border-size) * var(--negative-final-offset));
+    width: calc(100% + var(--element-extra-size));
+    height: calc(100% + var(--element-extra-size));
+
+    background-color: transparent;
+    box-shadow: inset 0 0 0 var( --outline-focus-border-size) var(--outline-focus-border-color);
+    border-radius: var(--outline-focus-border-radius);
+}

@@ -1,0 +1,30 @@
+:root {
+    --color-neutral-lightest: #f0f0f0;
+    --color-neutral-light: #d8d8d8;
+    --color-neutral-darkest: #101010;
+    --color-neutral-dark: #202020;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    background-color: transparent;
+    color: var(--color-neutral-lightest);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--color-neutral-darkest);
+    height: 100%;
+}
+
+button {
+    cursor: pointer;
+}
