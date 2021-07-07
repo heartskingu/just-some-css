@@ -27,6 +27,7 @@ body {
   height: 100%;
   width: var(--body-width);
   transition: width 0.3s;
+  color: var(--color-neutral-lightest);
 }
 
 button {

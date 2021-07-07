@@ -15,17 +15,33 @@
       <header>
         <button
           class="outline-btn outline-focus"
-          activates="sideMenu"
+          activates="#sideMenu"
           callback="toggleSideMenu"
         >
           Toggle
         </button>
       </header>
+      <main class="flex-center">
+        <div
+          id="offlineDiv"
+          class="offline-div"
+          activates="#offlineDiv"
+          activatorType="offline"
+          activatorElement="window">
+          <p
+            activates="#offlineDiv"
+            activatorType="online"
+            activatorElement="window">
+            I can activate myself when offline!
+          </p>
+        </div>
+        di
+      </main>
     </div>
     <div id="sideMenu" class="side-menu">
       <button
         class="outline-btn-dark outline-focus"
-        activates="sideMenu"
+        activates="#sideMenu"
         callback="toggleSideMenu"
       >
         Toggle

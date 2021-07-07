@@ -5,3 +5,18 @@ header {
   align-items: center;
   width: 100%;
 }
+
+.offline-div {
+  display: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.offline-div > p {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.offline-div.activated {
+  display: block;
+}

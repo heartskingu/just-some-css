@@ -13,12 +13,28 @@ function loadActivators() {
 
   // For each element
   activators.forEach((el) => {
+    // Event type
+    const activatorType = el.getAttribute("activatorType");
+    const eventListenerType = activatorType ? activatorType : "click";
+    let activatorElement = el.getAttribute("activatorElement");
 
-    // On click
-    el.addEventListener("click", () => {
+    if (activatorElement) {
+      if (activatorElement == "window") {
+        activatorElement = window;
+      } else if (activatorElement == "document") {
+        activatorElement = document;
+      } else {
+        activatorElement = document.querySelector(activatorElement);
+      }
+    } else {
+      activatorElement = el;
+    }
+
+    // On event type
+    activatorElement.addEventListener(eventListenerType, () => {
 
       // Get element which will be activated
-      const targetElement = document.getElementById(
+      const targetElement = document.querySelector(
         el.getAttribute("activates")
       );
 
