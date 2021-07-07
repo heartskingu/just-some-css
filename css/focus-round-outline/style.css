@@ -1,3 +1,4 @@
+/* #region Generic box element with border */
 .box {
   width: 200px;
   height: 200px;
@@ -16,6 +17,8 @@
   transition: all 1s, background-color 0.1s;
   background-color: rgb(136, 45, 91);
 }
+/* #endregion Generic box element with border */
+
 
 .box:focus::after {
   /* Border size */
@@ -47,8 +50,4 @@
   background-color: transparent;
   box-shadow: inset 0 0 0 var(--border-size) var(--border-color);
   border-radius: var(--border-radius);
-}
-
-.mr-1 {
-  margin-right: 32px;
 }
