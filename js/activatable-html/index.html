@@ -21,7 +21,7 @@
           Toggle
         </button>
       </header>
-      <main class="flex-center">
+      <main class="flex-column flex-center">
         <div
           id="offlineDiv"
           class="offline-div"
@@ -35,7 +35,29 @@
             I can activate myself when offline!
           </p>
         </div>
-        di
+        <div
+          activates=".even-item-opacity"
+          activatorType="mouseover"
+          deactivates=".even-item-opacity"
+          deactivatorType="mouseout">
+          <p>Hover me to focus odd items</p>
+        </div>
+        <div
+          activates=".odd-item-opacity"
+          activatorType="mouseover"
+          deactivates=".odd-item-opacity"
+          deactivatorType="mouseout">
+          <p>Hover me to focus even items</p>
+        </div>
+        <div>
+          <ol>
+            <li class="odd-item-opacity">Item 1</li>
+            <li class="even-item-opacity">Item 2</li>
+            <li class="odd-item-opacity">Item 3</li>
+            <li class="even-item-opacity">Item 4</li>
+            <li class="odd-item-opacity">Item 5</li>
+          </ol>
+        </div>
       </main>
     </div>
     <div id="sideMenu" class="side-menu">

@@ -6,6 +6,18 @@ header {
   width: 100%;
 }
 
+ol {
+  list-style-type: none;
+}
+
+.container p {
+  margin-bottom: 8px;
+}
+
+.container p, li {
+  font-size: 24px;
+}
+
 .offline-div {
   display: none;
   font-size: 24px;
@@ -13,10 +25,25 @@ header {
 }
 
 .offline-div > p {
-  font-size: 24px;
   font-weight: bold;
 }
 
 .offline-div.activated {
   display: block;
+}
+
+.odd-item-opacity {
+  opacity: 1;
+}
+
+.odd-item-opacity.activated {
+  opacity: .4;
+}
+
+.even-item-opacity {
+  opacity: 1;
+}
+
+.even-item-opacity.activated {
+  opacity: .4;
 }

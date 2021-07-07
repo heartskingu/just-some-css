@@ -2,21 +2,22 @@
 document.addEventListener(
   "DOMContentLoaded",
   function () {
-    loadActivators();
+    loadActivateSystem();
+    loadActivateSystem(true);
   },
   false
 );
 
-function loadActivators() {
+function loadActivateSystem(isDeactivating = false) {
+  const prefix = isDeactivating ? "de" : "";
   // Get all activators elements
-  var activators = document.querySelectorAll("[activates]");
+  var activators = document.querySelectorAll(`[${prefix}activates]`);
 
   // For each element
   activators.forEach((el) => {
     // Event type
-    const activatorType = el.getAttribute("activatorType");
-    const eventListenerType = activatorType ? activatorType : "click";
-    let activatorElement = el.getAttribute("activatorElement");
+    const activatorType = el.getAttribute(`${prefix}activatorType`) ? el.getAttribute(`${prefix}activatorType`) : "click";
+    let activatorElement = el.getAttribute(`${prefix}activatorElement`);
 
     if (activatorElement) {
       if (activatorElement == "window") {
@@ -30,29 +31,34 @@ function loadActivators() {
       activatorElement = el;
     }
 
-    // On event type
-    activatorElement.addEventListener(eventListenerType, () => {
+    // Get element which will be activated
+    const targetElements = document.querySelectorAll(
+      el.getAttribute(`${prefix}activates`)
+    );
 
-      // Get element which will be activated
-      const targetElement = document.querySelector(
-        el.getAttribute("activates")
-      );
+    // Get callback function 
+    const callback = el.getAttribute("callback");
 
-      // Get callback function 
-      const callback = el.getAttribute("callback");
+    addActivatorsListeners(activatorElement, activatorType, targetElements, callback);
+  });
+}
 
+function addActivatorsListeners(activatorElement, eventListenerType, targetElements, callback) {
+  // On event type
+  activatorElement.addEventListener(eventListenerType, () => {
+    targetElements.forEach((targetEl) => {
       // Toggle activated class
-      if (targetElement.classList.contains("activated")) {
-        targetElement.classList.remove("activated");
+      if (targetEl.classList.contains("activated")) {
+        targetEl.classList.remove("activated");
       } else {
-        targetElement.classList.add("activated");
+        targetEl.classList.add("activated");
       }
+    })
 
-      // Call cllback function if any
-      if (callback) {
-        window[callback]();
-      }
-    });
+    // Call cllback function if any
+    if (callback) {
+      window[callback]();
+    }
   });
 }
 
