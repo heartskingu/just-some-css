@@ -32,18 +32,10 @@ ol {
   display: block;
 }
 
-.odd-item-opacity {
+.item-opacity {
   opacity: 1;
 }
 
-.odd-item-opacity.activated {
-  opacity: .4;
-}
-
-.even-item-opacity {
-  opacity: 1;
-}
-
-.even-item-opacity.activated {
+.item-opacity.activated {
   opacity: .4;
 }

@@ -13,49 +13,47 @@
   <body>
     <div class="container">
       <header>
+        <!-- Click with callback example -->
         <button
           class="outline-btn outline-focus"
           activates="#sideMenu"
-          callback="toggleSideMenu"
+          activatedCallback="toggleSideMenu"
         >
           Toggle
         </button>
       </header>
+      
       <main class="flex-column flex-center">
+        <!-- Window activator example -->
         <div
-          id="offlineDiv"
           class="offline-div"
           activates="#offlineDiv"
-          activatorType="offline"
-          activatorElement="window">
-          <p
-            activates="#offlineDiv"
-            activatorType="online"
-            activatorElement="window">
+          activatorType="offline">
+          <p>
             I can activate myself when offline!
           </p>
         </div>
+
+        <!-- Hover example -->
         <div
-          activates=".even-item-opacity"
-          activatorType="mouseover"
-          deactivates=".even-item-opacity"
-          deactivatorType="mouseout">
+          class="hover-odd item-opacity non-selectable"
+          activates="li.item-opacity:nth-child(even), .hover-even"
+          activatorType="mouseover">
           <p>Hover me to focus odd items</p>
         </div>
         <div
-          activates=".odd-item-opacity"
-          activatorType="mouseover"
-          deactivates=".odd-item-opacity"
-          deactivatorType="mouseout">
+          class="hover-even item-opacity non-selectable"
+          activates="li.item-opacity:nth-child(odd), .hover-odd"
+          activatorType="mouseover">
           <p>Hover me to focus even items</p>
         </div>
-        <div>
+        <div class="non-selectable">
           <ol>
-            <li class="odd-item-opacity">Item 1</li>
-            <li class="even-item-opacity">Item 2</li>
-            <li class="odd-item-opacity">Item 3</li>
-            <li class="even-item-opacity">Item 4</li>
-            <li class="odd-item-opacity">Item 5</li>
+            <li class="item-opacity">Item 1</li>
+            <li class="item-opacity">Item 2</li>
+            <li class="item-opacity">Item 3</li>
+            <li class="item-opacity">Item 4</li>
+            <li class="item-opacity">Item 5</li>
           </ol>
         </div>
       </main>
@@ -64,7 +62,7 @@
       <button
         class="outline-btn-dark outline-focus"
         activates="#sideMenu"
-        callback="toggleSideMenu"
+        activatedCallback="toggleSideMenu"
       >
         Toggle
       </button>
